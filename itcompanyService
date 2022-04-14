@@ -1,0 +1,34 @@
+package com.motivity.services;
+import com.motivity.dao.ItDao;
+import com.motivity.entities.ITcompany;
+import java.util.List;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+
+@Service
+
+public class ItcompanyService implements ItService {
+	@Autowired
+    public ItDao itDao;
+    @Transactional
+   
+    public void add(ITcompany itcompany) {
+        itDao.add(itcompany);
+    }
+    @Transactional
+    public void delete(ITcompany itcompany) {
+        itDao.delete(itcompany);
+    }
+    @Transactional
+    public void update(ITcompany itcompany) {
+        itDao.update(itcompany);
+    }
+    @Transactional
+	public List<ITcompany> selection(){
+		return itDao.selection();
+	}
+    
+    
+
+}
